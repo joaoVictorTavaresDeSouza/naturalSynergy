@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natural Synergy</title>
+    <link rel="stylesheet" href="./src/css/index.css">
 </head>
 <body>
 
-    <div class="loader">
+    <div id="loader">
         <div class="spinner"></div>
     </div>
     
     <header class="header">
         <div class="container">
+            <a href="" class="logo">
+                <img src="./src/assets/logo.png" alt="Logo">
+            </a>
 
-            <a href="./src/assets/" class="logo"></a>
+            <div class="hamburguer" id="hamburguer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
+            <nav id="nav-menu">
+                <ul class="navigation">
+                    <li><a href="./index.html"><strong class="paginaAtiva">Início</strong></a></li>
+                    <li><a href="./src/pages/">Instruções</a></li>
+                    <li><a href="./src/pages/">Hardware</a></li>
+                    <li><a href="./src/pages/">Referências</a></li>
+                    <li><a href="./src/pages/">Equipe</a></li>
+                    <li><a href="./src/pages/">Jogo</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -26,6 +44,8 @@
     <footer class="footer">
 
     </footer>
+
+    <script src="./src/js/main.js"></script>
     
 </body>
 </html>

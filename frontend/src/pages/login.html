@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon" class="icon">
-    <title>Natural Synergy</title>
-    <link rel="stylesheet" href="../css/instructions.css">
+    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon">
+    <title>Login | Natural Synergy</title>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 
     <div id="loader">
-        <div class="spinner"></div>
+        <div class="indicadorCarregamento"></div>
     </div>
-    
+
     <header class="header">
         <div class="container">
             <a href="../../index.html" class="logo">
@@ -28,8 +28,8 @@
             <nav id="nav-menu">
                 <ul class="navigation">
                     <li><a href="../../index.html">Início</a></li>
-                    <li><a href="./src/pages/instructions.html">Instruções</a></li>
-                    <li><a href="./hardware.html">Hardware</a></li> 
+                    <li><a href="./src/pages/instructions.html">Instruções</strong></a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
                     <li><a href="./references.html">Referências</a></li>
                     <li><a href="./team.html">Equipe</a></li>
                     <li><a href="./game.html">Jogo</a></li>
@@ -39,15 +39,62 @@
         </div>
     </header>
 
-    <main class="content">
+    <main class="paginaLogin">
+
+        <section class="arteLogin">
+            <div class="camadaArte camada1"></div>
+            <div class="camadaArte camada2"></div>
+            <div class="camadaArte camada3"></div>
+            <div class="camadaArte camada4"></div>
+
+            <div class="logoArte">
+                <img src="../../src/assets/transparentLogoNaturalSynergy.png" alt="Natural Synergy">
+            </div>
+        </section>
+
+        <section class="painelLogin">
+            <div class="caixaLogin">
+
+                <a href="../../index.html" class="marca">
+                    <img src="../../src/assets/logoNaturalSynergy.png" alt="Logo">
+                    <span>Natural Synergy</span>
+                </a>
+
+                <div class="cabecalhoLogin">
+                    <h1 class="tituloLogin">Acesse sua conta</h1>
+                    <p class="subtituloLogin">Entre para acompanhar os dados do dispositivo.</p>
+                </div>
+
+                <form class="formularioLogin">
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Sua senha" autocomplete="current-password" required>
+                    </div>
+
+                    <button type="submit" class="botaoLogin">Entrar</button>
+                </form>
+
+                <div class="divisorLogin"></div>
+
+                <a href="./cadastro.html" class="cartaoAlternancia">
+                    <div class="textoAlternancia">
+                        <span class="rotuloAlternancia">Ainda não tem conta?</span>
+                        <strong class="acaoAlternancia">Cadastre-se</strong>
+                    </div>
+                    <span class="setaAlternancia">›</span>
+                </a>
+
+            </div>
+        </section>
 
     </main>
 
-    <footer class="footer">
-
-    </footer>
-
     <script src="../js/main.js"></script>
-    
+
 </body>
 </html>

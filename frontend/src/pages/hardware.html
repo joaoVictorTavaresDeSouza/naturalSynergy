@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon" class="icon">
-    <title>Natural Synergy</title>
-    <link rel="stylesheet" href="../css/instructions.css">
+    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon">
+    <title>Hardware | Natural Synergy</title>
+    <link rel="stylesheet" href="../css/hardware.css">
 </head>
 <body>
-
     <div id="loader">
         <div class="spinner"></div>
     </div>
-    
+
     <header class="header">
         <div class="container">
             <a href="../../index.html" class="logo">
-                <img src="../../src/assets/logoNaturalSynergy.png" alt="Logo">
+                <img src="../assets/logoNaturalSynergy.png" alt="Natural Synergy">
             </a>
 
-            <div class="hamburguer" id="hamburguer">
+            <button class="hamburguer" id="hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
-            <nav id="nav-menu">
+            <nav id="nav-menu" aria-label="Navegação principal">
                 <ul class="navigation">
                     <li><a href="../../index.html">Início</a></li>
-                    <li><a href="./src/pages/instructions.html">Instruções</a></li>
-                    <li><a href="./hardware.html"><strong class="paginaAtiva">Hardware</strong></a></li> 
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html" aria-current="page">Hardware</a></li>
                     <li><a href="./references.html">Referências</a></li>
                     <li><a href="./team.html">Equipe</a></li>
                     <li><a href="./game.html">Jogo</a></li>
@@ -40,14 +39,87 @@
     </header>
 
     <main class="content">
+        <section class="hardware">
+            <div class="hardware-intro">
+                <p class="eyebrow">Componentes</p>
+                <h1>O que faz parte do protótipo</h1>
+                <p>Estas são as peças previstas para montar o sistema vestível e a função de cada uma.</p>
+            </div>
 
+            <ul class="component-grid">
+                <li class="component-card">
+                    <h2>ESP32</h2>
+                    <p>Processamento e controle do sistema.</p>
+                </li>
+                <li class="component-card">
+                    <h2>MPU6050</h2>
+                    <p>Leitura de aceleração e rotação.</p>
+                </li>
+                <li class="component-card">
+                    <h2>MAX30102</h2>
+                    <p>Leitura de sinais ópticos relacionados à frequência cardíaca.</p>
+                </li>
+                <li class="component-card">
+                    <h2>SIM800L</h2>
+                    <p>Comunicação celular e envio de SMS.</p>
+                </li>
+                <li class="component-card">
+                    <h2>Bateria LiPo</h2>
+                    <p>Alimentação elétrica do protótipo.</p>
+                </li>
+                <li class="component-card">
+                    <h2>Impressão 3D</h2>
+                    <p>Estrutura que abriga os componentes e permite usar o sistema no corpo.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="hardware-flow" aria-labelledby="flow-title">
+            <h2 id="flow-title">Como as partes trabalham juntas</h2>
+            <ol class="flow-list">
+                <li>
+                    <h3>Os sensores acompanham sinais</h3>
+                    <p>O MPU6050 registra movimentos, enquanto o MAX30102 lê sinais ópticos relacionados à frequência cardíaca.</p>
+                </li>
+                <li>
+                    <h3>O ESP32 coordena o sistema</h3>
+                    <p>O microcontrolador recebe as informações dos sensores e organiza o funcionamento do protótipo.</p>
+                </li>
+                <li>
+                    <h3>O alerta pode ser enviado</h3>
+                    <p>Com o botão de emergência, a proposta é usar o SIM800L para enviar um SMS pela rede celular.</p>
+                </li>
+            </ol>
+        </section>
     </main>
 
-    <footer class="footer">
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="../../index.html" class="logo">
+                    <img src="../assets/logoNaturalSynergy.png" alt="">
+                    Natural Synergy
+                </a>
+                <p>
+                    Sistema IoT vestível para detecção de crises epilépticas e alerta de emergência.
+                    Projeto acadêmico apresentado no SIPIC (Simpósio de Pré-Iniciação Científica)
+                    do Colégio UNASP-SP.
+                </p>
+            </div>
 
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./src/pages/instructions.html">Instruções</a></li>
+                    <li><a href="./src/pages/hardware.html">Hardware</a></li>
+                    <li><a href="./src/pages/references.html">Referências</a></li>
+                    <li><a href="./src/pages/team.html">Equipe</a></li>
+                    <li><a href="./src/pages/game.html">Jogo</a></li>
+                </ul>
+            </nav>
+        </div>
     </footer>
 
     <script src="../js/main.js"></script>
-    
 </body>
 </html>

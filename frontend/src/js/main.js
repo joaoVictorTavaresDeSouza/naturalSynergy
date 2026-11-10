@@ -24,7 +24,9 @@ const navMenu = document.getElementById('nav-menu')
 
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active')
+        const isOpen = navMenu.classList.toggle('active')
         hamburger.classList.toggle('open')
+        hamburger.setAttribute('aria-expanded', String(isOpen))
+        hamburger.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu')
     })
 }

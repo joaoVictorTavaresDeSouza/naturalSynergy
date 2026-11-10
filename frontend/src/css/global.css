@@ -60,6 +60,7 @@ a {
 }
 
 /* === LOADER === */
+
 #loader {
     position: fixed;
     inset: 0;
@@ -94,6 +95,7 @@ body.loaded #loader {
 }
 
 /* === HEADER === */
+
 .header {
     position: sticky;
     top: 0;

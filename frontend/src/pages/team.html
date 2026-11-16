@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon" class="icon">
-    <title>Natural Synergy</title>
-    <link rel="stylesheet" href="../css/instructions.css">
+    <meta name="description" content="Conheça os três integrantes da equipe Natural Synergy e acesse seus perfis no Instagram.">
+    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon">
+    <title>Equipe | Natural Synergy</title>
+    <link rel="stylesheet" href="../css/team.css">
 </head>
 <body>
-
     <div id="loader">
         <div class="spinner"></div>
     </div>
-    
+
     <header class="header">
         <div class="container">
             <a href="../../index.html" class="logo">
-                <img src="../../src/assets/logoNaturalSynergy.png" alt="Logo">
+                <img src="../assets/logoNaturalSynergy.png" alt="Natural Synergy">
             </a>
 
-            <div class="hamburguer" id="hamburguer">
+            <button class="hamburguer" id="hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
-            <nav id="nav-menu">
+            <nav id="nav-menu" aria-label="Navegação principal">
                 <ul class="navigation">
                     <li><a href="../../index.html">Início</a></li>
-                    <li><a href="./src/pages/instructions.html">Instruções</a></li>
-                    <li><a href="./hardware.html">Hardware</a></li> 
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
                     <li><a href="./references.html">Referências</a></li>
-                    <li><a href="./team.html"><strong class="paginaAtiva">Equipe</strong></a></li>
+                    <li><a href="./team.html" aria-current="page"><strong class="paginaAtiva">Equipe</strong></a></li>
                     <li><a href="./game.html">Jogo</a></li>
                     <li><a href="./login.html" class="login">Login</a></li>
                 </ul>
@@ -40,7 +40,43 @@
     </header>
 
     <main class="content">
+        <section class="paginaEquipe" aria-labelledby="tituloEquipe">
+            <header class="introducaoEquipe">
+                <p class="rotuloEquipe">Natural Synergy</p>
+                <h1 id="tituloEquipe">Nossa equipe</h1>
+                <p>Conheça as pessoas que fazem parte do projeto. Passe o cursor sobre cada foto para ver o nome e acessar o Instagram.</p>
+            </header>
 
+            <ul class="gradeEquipe">
+                <li>
+                    <a class="membroEquipe" href="https://www.instagram.com/_.helo.moon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Heloísa Monteiro, @_.helo.moon">
+                        <img class="imagemMembro" src="../assets/heloisa.png" alt="Heloísa Monteiro" loading="lazy" decoding="async">
+                        <div class="informacoesMembro">
+                            <h2>Heloísa Monteiro</h2>
+                            <span>@_.helo.moon</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="membroEquipe" href="https://www.instagram.com/pereimel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Melyssa Pereira, @pereimel">
+                        <img class="imagemMembro" src="../assets/melyssa.png" alt="Melyssa Pereira" loading="lazy" decoding="async">
+                        <div class="informacoesMembro">
+                            <h2>Melyssa Pereira</h2>
+                            <span>@pereimel</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="membroEquipe" href="https://www.instagram.com/_victor_tavares/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de João Victor Tavares, @_victor_tavares">
+                        <img class="imagemMembro" src="../assets/joao.png" alt="João Victor Tavares" loading="lazy" decoding="async">
+                        <div class="informacoesMembro">
+                            <h2>João Victor Tavares</h2>
+                            <span>@_victor_tavares</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -59,18 +95,16 @@
 
             <nav class="footer-nav" aria-label="Navegação do rodapé">
                 <ul>
-                    <li><a href="./index.html">Início</a></li>
-                    <li><a href="./src/pages/instructions.html">Instruções</a></li>
-                    <li><a href="./src/pages/hardware.html">Hardware</a></li>
-                    <li><a href="./src/pages/references.html">Referências</a></li>
-                    <li><a href="./src/pages/team.html">Equipe</a></li>
-                    <li><a href="./src/pages/game.html">Jogo</a></li>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
+                    <li><a href="./references.html">Referências</a></li>
+                    <li><a href="./team.html" aria-current="page">Equipe</a></li>
+                    <li><a href="./game.html">Jogo</a></li>
                 </ul>
             </nav>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
-    
 </body>
-</html>

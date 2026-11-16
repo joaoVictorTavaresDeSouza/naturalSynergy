@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon" class="icon">
-    <title>Natural Synergy</title>
-    <link rel="stylesheet" href="../css/instructions.css">
+    <meta name="description" content="Jogue GreenCode diretamente no site Natural Synergy e confira os comandos.">
+    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon">
+    <title>GreenCode | Natural Synergy</title>
+    <link rel="stylesheet" href="../css/game.css">
 </head>
 <body>
-
     <div id="loader">
         <div class="spinner"></div>
     </div>
-    
+
     <header class="header">
         <div class="container">
             <a href="../../index.html" class="logo">
-                <img src="../../src/assets/logoNaturalSynergy.png" alt="Logo">
+                <img src="../assets/logoNaturalSynergy.png" alt="Natural Synergy">
             </a>
 
-            <div class="hamburguer" id="hamburguer">
+            <button class="hamburguer" id="hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
-            <nav id="nav-menu">
+            <nav id="nav-menu" aria-label="Navegação principal">
                 <ul class="navigation">
                     <li><a href="../../index.html">Início</a></li>
-                    <li><a href="./src/pages/instructions.html">Instruções</a></li>
-                    <li><a href="./hardware.html">Hardware</a></li> 
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
                     <li><a href="./references.html">Referências</a></li>
                     <li><a href="./team.html">Equipe</a></li>
-                    <li><a href="./game.html"><strong class="paginaAtiva">Jogo</strong></a></li>
+                    <li><a href="./game.html" aria-current="page">Jogo</a></li>
                     <li><a href="./login.html" class="login">Login</a></li>
                 </ul>
             </nav>
@@ -40,14 +40,85 @@
     </header>
 
     <main class="content">
+        <section class="game" aria-labelledby="game-title">
+            <div class="game-intro">
+                <p class="eyebrow">Jogo interativo</p>
+                <h1 id="game-title">GreenCode</h1>
+                <p>Prepare-se para jogar. Use os comandos abaixo para explorar o jogo direto nesta página.</p>
+            </div>
 
+            <div class="game-window">
+                <div class="window-bar" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <p>GreenCode <span>•</span> jogo online</p>
+                </div>
+                <div class="game-screen">
+                    <iframe
+                        src="https://greencode-one.vercel.app/"
+                        title="Jogo GreenCode"
+                        allowfullscreen
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="game-actions">
+                <p>Clique no jogo para usar o teclado. Se preferir, abra em uma nova aba.</p>
+                <a class="open-game" href="https://greencode-one.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    Abrir jogo em nova aba <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <section class="controls" aria-labelledby="controls-title">
+                <div class="controls-heading">
+                    <p class="eyebrow">Controles</p>
+                    <h2 id="controls-title">Como jogar</h2>
+                </div>
+
+                <ul class="controls-grid">
+                    <li><span class="keys"><kbd>←</kbd><kbd>→</kbd> <span>ou</span> <kbd>A</kbd><kbd>D</kbd></span><span class="control-description">Mover</span></li>
+                    <li><span class="keys"><kbd>Shift</kbd></span><span class="control-description">Correr</span></li>
+                    <li><span class="keys"><kbd>Espaço</kbd></span><span class="control-description">Pular; segure no ar para planar com Umbra</span></li>
+                    <li><span class="keys"><kbd>J</kbd></span><span class="control-description">Atacar com flecha ou orbe</span></li>
+                    <li><span class="keys"><kbd>H</kbd></span><span class="control-description">Usar frasco de cura</span></li>
+                    <li><span class="keys"><kbd>N</kbd></span><span class="control-description">Ativar ou desativar a música</span></li>
+                    <li><span class="keys"><kbd>Esc</kbd></span><span class="control-description">Abrir o menu</span></li>
+                </ul>
+
+                <p class="accessibility-note">O jogo não utiliza luzes piscantes.</p>
+            </section>
+        </section>
     </main>
 
-    <footer class="footer">
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="../../index.html" class="logo">
+                    <img src="../assets/logoNaturalSynergy.png" alt="">
+                    Natural Synergy
+                </a>
+                <p>
+                    Sistema IoT vestível para detecção de crises epilépticas e alerta de emergência.
+                    Projeto acadêmico apresentado no SIPIC (Simpósio de Pré-Iniciação Científica)
+                    do Colégio UNASP-SP.
+                </p>
+            </div>
 
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
+                    <li><a href="./references.html">Referências</a></li>
+                    <li><a href="./team.html">Equipe</a></li>
+                    <li><a href="./game.html" aria-current="page">Jogo</a></li>
+                </ul>
+            </nav>
+        </div>
     </footer>
 
     <script src="../js/main.js"></script>
-    
 </body>
 </html>

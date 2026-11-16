@@ -1,1 +1,145 @@
 @import url(./global.css);
+
+.paginaEquipe {
+    padding-block: 1.5rem 2rem;
+}
+
+.introducaoEquipe {
+    max-width: 44rem;
+    margin-bottom: 2rem;
+}
+
+.rotuloEquipe {
+    margin-bottom: 0.55rem;
+    color: var(--destaque);
+    font-size: 0.8rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.introducaoEquipe h1 {
+    color: var(--texto);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.introducaoEquipe > p:nth-of-type(2) {
+    max-width: 38rem;
+    margin-top: 0.85rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+.gradeEquipe {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.membroEquipe {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--borda);
+    border-radius: 0.65rem;
+    background: var(--superficie);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.membroEquipe:hover,
+.membroEquipe:focus-visible {
+    z-index: 1;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 28%);
+}
+
+.membroEquipe:focus-visible {
+    outline: 2px solid var(--destaque);
+    outline-offset: 3px;
+}
+
+.imagemMembro {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease, filter 220ms ease;
+}
+
+.informacoesMembro {
+    position: absolute;
+    z-index: 2;
+    inset: auto 0 0;
+    display: grid;
+    gap: 0.35rem;
+    padding: 3.75rem 1.15rem 1.2rem;
+    background: linear-gradient(transparent, rgb(8 20 38 / 97%) 40%);
+    color: var(--texto);
+    opacity: 0;
+    transform: translateY(0.65rem);
+    transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.informacoesMembro h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+}
+
+.informacoesMembro span {
+    color: var(--destaque);
+    font-size: 0.85rem;
+}
+
+.membroEquipe:hover .imagemMembro,
+.membroEquipe:focus-visible .imagemMembro {
+    transform: scale(1.035);
+    filter: brightness(0.78);
+}
+
+.membroEquipe:hover .informacoesMembro,
+.membroEquipe:focus-visible .informacoesMembro {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+    .gradeEquipe {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 540px) {
+    .paginaEquipe {
+        padding-top: 0.5rem;
+    }
+
+    .gradeEquipe {
+        width: min(100%, 24rem);
+        grid-template-columns: 1fr;
+        margin-inline: auto;
+    }
+
+    .membroEquipe {
+        aspect-ratio: 4 / 4.5;
+    }
+}
+
+@media (hover: none) {
+    .informacoesMembro {
+        opacity: 1;
+        transform: none;
+    }
+
+    .imagemMembro {
+        filter: brightness(0.8);
+    }
+}

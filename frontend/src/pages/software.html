@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel experimental para visualizar mensagens recebidas do protótipo Natural Synergy.">
+    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon">
+    <title>Aplicativo | Natural Synergy</title>
+    <link rel="stylesheet" href="../css/software.css">
+</head>
+<body data-websocket-url="">
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <img src="../assets/logoNaturalSynergy.png" alt="Natural Synergy">
+            </a>
+
+            <button class="hamburguer" id="hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="nav-menu" aria-label="Navegação principal">
+                <ul class="navigation">
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
+                    <li><a href="./references.html">Referências</a></li>
+                    <li><a href="./team.html">Equipe</a></li>
+                    <li><a href="./game.html">Jogo</a></li>
+                    <li><a href="./login.html" class="login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="paginaSoftware" aria-labelledby="tituloSoftware">
+            <header class="introducaoSoftware">
+                <p class="rotuloSoftware">Protótipo experimental</p>
+                <h1 id="tituloSoftware">Dados do Natural Synergy</h1>
+                <p>Este painel recebe mensagens do ESP32 em tempo real por WebSocket. A visualização não armazena dados nem substitui acompanhamento médico.</p>
+                <p class="avisoSoftware" id="mensagemConexao">O endereço WSS será configurado quando o servidor estiver pronto.</p>
+            </header>
+
+            <section class="estadoSoftware" aria-label="Estado da conexão">
+                <div>
+                    <p class="rotuloConexao">Conexão com o backend</p>
+                    <p class="estadoConexao estadoPendente" id="statusConexao" role="status" aria-live="polite">Backend ainda não configurado</p>
+                </div>
+                <button class="botaoReconectar" id="botaoReconectar" type="button" disabled>
+                    Tentar conexão novamente
+                </button>
+            </section>
+
+            <section class="leiturasSoftware" aria-labelledby="tituloLeituras">
+                <div class="cabecalhoLeituras">
+                    <h2 id="tituloLeituras">Última mensagem do ESP32</h2>
+                    <div class="metadadosLeitura">
+                        <p>Mensagens: <strong id="quantidadeMensagens">0</strong></p>
+                        <p>Atualizado: <time id="horarioRecebimento">—</time></p>
+                    </div>
+                </div>
+                <pre class="dadosRecebidos" id="dadosRecebidos" aria-live="polite">Nenhuma mensagem recebida.</pre>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="../../index.html" class="logo">
+                    <img src="../assets/logoNaturalSynergy.png" alt="">
+                    Natural Synergy
+                </a>
+                <p>
+                    Sistema IoT vestível para detecção de crises epilépticas e alerta de emergência.
+                    Projeto acadêmico apresentado no SIPIC (Simpósio de Pré-Iniciação Científica)
+                    do Colégio UNASP-SP.
+                </p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
+                    <li><a href="./references.html">Referências</a></li>
+                    <li><a href="./team.html">Equipe</a></li>
+                    <li><a href="./game.html">Jogo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/software.js"></script>
+</body>
+</html>

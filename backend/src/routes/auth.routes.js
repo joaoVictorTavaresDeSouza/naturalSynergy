@@ -1,5 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const db = require("../database");
 
 const router = express.Router();
@@ -102,16 +103,29 @@ router.post("/login", async (req, res) => {
       });
     }
 
-    // 4. Login autorizado
-    return res.status(200).json({
-      success: true,
-      message: "Login realizado com sucesso!",
-      usuario: {
-        id: usuario.id,
-        nome: usuario.nome,
-        email: usuario.email,
-      },
-    });
+    // 4. Gerar token JWT
+const token = jwt.sign(
+  {
+    id: usuario.id,
+    email: usuario.email,
+  },
+  process.env.JWT_SECRET,
+  {
+    expiresIn: "1h",
+  }
+);
+
+// 5. Login autorizado
+return res.status(200).json({
+  success: true,
+  message: "Login realizado com sucesso!",
+  token,
+  usuario: {
+    id: usuario.id,
+    nome: usuario.nome,
+    email: usuario.email,
+  },
+});
 
   } catch (error) {
     console.error("Erro no login:", error.message);

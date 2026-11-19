@@ -60,7 +60,7 @@ if (!formulario) {
             mensagem.style.color = "#16803c";
 
             setTimeout(() => {
-                window.location.href = "./software.html";
+                window.location.href = "./perfil.html";
             }, 1200);
 
         } catch (error) {

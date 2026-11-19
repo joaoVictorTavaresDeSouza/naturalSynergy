@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../public/nSynergyIco.ico" type="image/x-icon">
+    <title>Meu Perfil | Natural Synergy</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="indicadorCarregamento"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <img src="../../src/assets/logoNaturalSynergy.png" alt="Logo">
+            </a>
+
+            <button class="hamburguer" id="hamburguer" type="button" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="nav-menu">
+                <ul class="navigation">
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./instructions.html">Instruções</a></li>
+                    <li><a href="./hardware.html">Hardware</a></li>
+                    <li><a href="./references.html">Referências</a></li>
+                    <li><a href="./team.html">Equipe</a></li>
+                    <li><a href="./game.html">Jogo</a></li>
+                    <li><a href="./perfil.html" class="login" aria-current="page">
+                        <strong class="paginaAtiva">Perfil</strong>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="paginaPerfil">
+        <section class="cartaoPerfil">
+
+            <div class="cabecalhoPerfil">
+                <div class="iconePerfil">NS</div>
+                <p class="rotuloPerfil">CONTA NATURAL SYNERGY</p>
+                <h1>Meu perfil</h1>
+                <p>Gerencie sua conta e acesse o monitoramento.</p>
+            </div>
+
+            <div class="informacoesPerfil">
+                <div class="informacao">
+                    <span>Nome</span>
+                    <strong id="nomeUsuario">Carregando...</strong>
+                </div>
+
+                <div class="informacao">
+                    <span>E-mail</span>
+                    <strong id="emailUsuario">Carregando...</strong>
+                </div>
+            </div>
+
+            <div class="acoesPerfil">
+                <a href="./software.html" class="botaoSoftware">
+                    Acessar monitoramento
+                </a>
+
+                <button type="button" id="botaoSair" class="botaoSair">
+                    Sair da conta
+                </button>
+            </div>
+
+            <p id="mensagemPerfil" role="status" aria-live="polite"></p>
+
+        </section>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/perfil.js"></script>
+
+</body>
+</html>

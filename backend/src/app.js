@@ -26,6 +26,87 @@ app.use("/api/auth", authRoutes);
 
 const autenticarToken = require("./middleware/auth.middleware");
 
+// ==========================================
+// MEMÓRIA TEMPORÁRIA DA TELEMETRIA
+// ==========================================
+
+let telemetria = {
+  batimentos: null,
+  aceleracao: null,
+  recebidoEm: null,
+  quantidadeMensagens: 0,
+  ultimoAlerta: null
+};
+
+function normalizarNumero(valor) {
+  if (valor === null || valor === undefined) {
+    return null;
+  }
+
+  const numero = Number(valor);
+
+  return Number.isFinite(numero) ? numero : null;
+}
+
+// Receber dados dos sensores
+app.post("/api/dados", (req, res) => {
+  const { batimentos, aceleracao } = req.body;
+
+  telemetria = {
+    ...telemetria,
+    batimentos: normalizarNumero(batimentos),
+    aceleracao: normalizarNumero(aceleracao),
+    recebidoEm: new Date().toISOString(),
+    quantidadeMensagens: telemetria.quantidadeMensagens + 1
+  };
+
+  res.status(200).json({
+    success: true,
+    message: "Telemetria recebida!",
+    dados: telemetria
+  });
+});
+
+// Receber alertas de emergência
+app.post("/api/alerta", (req, res) => {
+  const { tipo, mensagem, batimentos, aceleracao } = req.body;
+
+  telemetria = {
+    ...telemetria,
+    batimentos: normalizarNumero(batimentos),
+    aceleracao: normalizarNumero(aceleracao),
+    recebidoEm: new Date().toISOString(),
+    quantidadeMensagens: telemetria.quantidadeMensagens + 1,
+    ultimoAlerta: {
+      tipo: tipo || "EMERGENCIA",
+      mensagem: mensagem || "Alerta recebido",
+      recebidoEm: new Date().toISOString()
+    }
+  };
+
+  console.log("ALERTA RECEBIDO:", telemetria.ultimoAlerta);
+
+  res.status(200).json({
+    success: true,
+    message: "Alerta recebido!",
+    alerta: telemetria.ultimoAlerta
+  });
+});
+
+// Consultar últimos dados recebidos
+app.get("/api/dados", (req, res) => {
+  res.set("Cache-Control", "no-store");
+
+  res.status(200).json({
+    success: true,
+    dados: telemetria
+  });
+});
+
+// ==========================================
+// ROTAS EXISTENTES
+// ==========================================
+
 app.get("/api/usuario/perfil", autenticarToken, (req, res) => {
   res.status(200).json({
     success: true,

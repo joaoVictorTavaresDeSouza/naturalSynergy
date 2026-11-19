@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 function autenticarToken(req, res, next) {
   const authHeader = req.headers.authorization;
 
-  // Verifica se o token foi enviado
   if (!authHeader) {
     return res.status(401).json({
       success: false,
@@ -11,7 +10,6 @@ function autenticarToken(req, res, next) {
     });
   }
 
-  // Extrai o token do cabeçalho Bearer
   const [tipo, token] = authHeader.split(" ");
 
   if (tipo !== "Bearer" || !token) {
@@ -22,10 +20,8 @@ function autenticarToken(req, res, next) {
   }
 
   try {
-    // Verifica a validade do token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Disponibiliza os dados do usuário para a rota
     req.usuario = decoded;
 
     next();
